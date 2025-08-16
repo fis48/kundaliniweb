@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'lightFont';
+    src: url(./../src/assets/fonts/InterTight-Light.ttf);
+}
+
+@font-face {
+    font-family: 'regularFont';
+    src: url(./../src/assets/fonts/InterTight-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'boldFont';
+    src: url(./../src/assets/fonts/InterTight-SemiBold.ttf);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'regularFont';
+    color: #555;
+}
+
+button {
+    padding: 0.2em 0.3em;
+    border: none;
+    border-radius: 0.2em;
+    font-family: 'boldFont';
+    cursor: pointer;
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.icon-button img {
+    max-width: 30px;
+}
+
+.icon-button span {
+    padding: 0 1em;
+}
+
+.icon-container {
+    background-color: #FFF;
+    padding: 0.3em 0.5em;
+    border-radius: 0.3em;
+}
+
+strong {
+    color: #333;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.main-text p {
+    margin: 0;
+}

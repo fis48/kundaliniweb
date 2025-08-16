@@ -1,0 +1,18 @@
+<div class="top-container">
+    <nav class="main-nav">
+        <button class="icon-button">
+            <div class="icon-container">
+                <img src="assets/icon-lotus.png" alt="icon">
+            </div>
+            <span>Menu</span>
+        </button>
+        @for (section of sections; track $index) {
+            <button (click)="getSection(section.title)" class="icon-button">
+                <div class="icon-container">
+                    <img src="assets/icon-lotus.png" alt="icon">
+                </div>
+                <span>{{ section.title }}</span>
+            </button>
+        }
+    </nav>
+</div>

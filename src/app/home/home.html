@@ -1,0 +1,40 @@
+<div class="bg-container"></div>
+
+<div class="main-container">
+    <app-top 
+        sectionTitle="Home"
+        (sendSection)="handleSection($event)"
+    ></app-top>
+
+    @if (section) {
+        <h2>{{ section.title }}</h2>
+        <div class="main-text" [innerHTML]="section.mainText"></div>
+    }
+
+    @for (child of section?.children; track $index) {
+        <h3> {{ child.publicOrder }}. {{ child.title }}</h3>
+        <button (click)="getContent(child.id!)">See more</button>
+    }
+
+    @if (content) {
+        <div class="content-detail">
+            <h4>{{ content.title }}</h4>
+            <p [innerHTML]="content.mainText"></p>
+            @if (contentChildren) {
+                @for (ch of contentChildren; track $index) {
+                    <div class="ch-container">
+                        <h5>{{ ch.title }}</h5>
+                        <div class="content-images">
+                            @for (chImg of ch.images; track $index) {
+                                <img [src]="apiUrl + '/' + chImg.path + 
+                                    '/image/' + 
+                                    chImg.id" alt="Content image">
+                            }
+                        </div>
+                        <p [innerHTML]="ch.mainText"></p>                        
+                    </div>
+                }
+            }
+        </div>
+    }
+</div>
